@@ -1,12 +1,6 @@
-(async function(){
-  const KEY='boss-creator-v1';
-  const GAME='Pokémon Zafiro Alfa — Combates';
-  try{
-    const store=JSON.parse(localStorage.getItem(KEY)||'{"games":[]}');
-    store.games=(store.games||[]).filter(g=>g.name!==GAME);
-    localStorage.setItem(KEY,JSON.stringify(store));
-    const r=await fetch('./data/za-combates-final.js?v=force4',{cache:'no-store'});
-    const src=await r.text();
-    eval(src);
-  }catch(e){console.error('No se pudo reconstruir Zafiro Alfa con los equipos del PDF',e)}
+// Importación de Zafiro Alfa gestionada por za-combates-final.js.
+// Este archivo ya no borra/reconstruye la partida después de iniciar la interfaz.
+// Se mantiene para compatibilidad con versiones anteriores.
+(function(){
+  try { window.ZA_COMBATES_FORCE_DISABLED = true; } catch(e) {}
 })();
