@@ -5,11 +5,9 @@
   const P=(name,level,ability,item,moves)=>({id:uid(),name,level,ability,item,moves});
   const teams={
     fire:[P('Swellow',22,'Intrépido','Pañuelo Seda',['Pájaro Osado','Veloc. Extrema','Foco Energía','Doble Equipo']),P('Shroomish',22,'Pies Rápidos','Semilla Milagro',['Recurrente','Golpe Cabeza','Tóxico','Drenadoras']),P('Ponyta',22,'Cuerpo Llama','Carbón',['Nitrocarga','Doble Patada','Hipnosis','Pisotón']),P('Marshtomp',24,'Torrente','Baya Zidra',['Voto Agua','Excavar','Tumba Rocas','Maldición']),P('Munchlax',24,'Sebo','Restos',['Golpe Cuerpo','Bostezo','Triturar','Protección'])],
-    water:[P('Swellow',22,'Intrépido','Pañuelo Seda',['Pájaro Osado','Veloc. Extrema','Foco Energía','Doble Equipo']),P('Ponyta',22,'Cuerpo Llama','Carbón',['Nitrocarga','Doble Patada','Pisotón','Hipnosis']),P('Wailmer',22,'Agua Mística',['Hidropulso','Desenrollar','Golpe Cuerpo','Fisura'])],
+    water:[P('Swellow',22,'Intrépido','Pañuelo Seda',['Pájaro Osado','Veloc. Extrema','Foco Energía','Doble Equipo']),P('Ponyta',22,'Cuerpo Llama','Carbón',['Nitrocarga','Doble Patada','Pisotón','Hipnosis']),P('Wailmer',22,'Velo Agua','Agua Mística',['Hidropulso','Desenrollar','Golpe Cuerpo','Fisura']),P('Grovyle',24,'Espesura','Baya Zidra',['Voto Planta','Golpe Aéreo','Dragoaliento','Silbato']),P('Munchlax',24,'Sebo','Restos',['Golpe Cuerpo','Protección','Bostezo','Relajo'])],
     leaf:[P('Swellow',22,'Intrépido','Pañuelo Seda',['Pájaro Osado','Veloc. Extrema','Foco Energía','Doble Equipo']),P('Wailmer',22,'Velo Agua','Agua Mística',['Hidropulso','Desenrollar','Golpe Cuerpo','Fisura']),P('Shroomish',22,'Pies Rápidos','Semilla Milagro',['Recurrente','Tóxico','Golpe Cabeza','Drenadoras']),P('Combusken',24,'Mar Llamas','Baya Zidra',['Voto Fuego','Doble Patada','Golpe Aéreo','Danza Pluma']),P('Munchlax',24,'Sebo','Restos',['Golpe Cuerpo','Bostezo','Triturar','Protección'])]
   };
-  // Correct the water route: 295 contains Swellow, Ponyta, Wailmer, Grovyle and Munchlax.
-  teams.water.push(P('Grovyle',24,'Espesura','Baya Zidra',['Voto Planta','Golpe Aéreo','Dragoaliento','Silbato']),P('Munchlax',24,'Sebo','Restos',['Golpe Cuerpo','Protección','Bostezo','Relajo']));
   function ensure(){
     let s;try{s=JSON.parse(localStorage.getItem(KEY)||'{"games":[]}')}catch{return false}
     const g=s.games?.find(x=>x.name===GAME);if(!g)return false;
